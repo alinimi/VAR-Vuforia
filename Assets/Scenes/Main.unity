@@ -461,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &846552761
 Transform:
   m_ObjectHideFlags: 0
@@ -739,8 +739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b2a9d58f817ad4c9da63c403a9c1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDubbleTapTime: 0.1
+  MaxDubbleTapTime: 0.5
   menu: {fileID: 846552759}
+  isMenu: 0
 --- !u!1 &1277926662
 GameObject:
   m_ObjectHideFlags: 0

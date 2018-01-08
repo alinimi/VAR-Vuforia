@@ -12,6 +12,7 @@ public class ChangeColor : MonoBehaviour
 
     Color[] Colors = { Color.cyan, Color.green, Color.grey };
     int colorIndex = 0;
+    public bool isMenu = false;
     // Use this for initialization
     void Start()
     {
@@ -27,10 +28,23 @@ public class ChangeColor : MonoBehaviour
 
     }
 
+    public void EndMenu()
+    {
+        StartCoroutine(ExclusionZone());
+    }
+
+    IEnumerator ExclusionZone()
+    {
+        yield return new WaitForSeconds(2);
+        isMenu = false;
+        yield return null;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (!isMenu && Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -51,6 +65,7 @@ public class ChangeColor : MonoBehaviour
                 print("Dubble tap");
 
                 menu.SetActive(true);
+                isMenu = true;
 
                 TapCount = 0;
             }

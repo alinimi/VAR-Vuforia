@@ -17,6 +17,7 @@ public class LoadFurniture : MonoBehaviour {
 		
 	}
 
+
     public void LoadNow()
     {
         Debug.Log("filename " + filename);
@@ -27,6 +28,7 @@ public class LoadFurniture : MonoBehaviour {
         Destroy(oldChild.gameObject);
         o.transform.SetParent(target);
         target.gameObject.GetComponent<ChangeColor>().InitColors();
+        target.gameObject.GetComponent<ChangeColor>().EndMenu();
         iface.SetActive(false);
 
 

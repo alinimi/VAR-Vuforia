@@ -11,18 +11,24 @@ public class GenerateButtons : MonoBehaviour {
     public GameObject iface;
     
     public GameObject buttonPrefab;
-	// Use this for initialization
-	void Start () {
-        //furniture = Resources.LoadAll("Assets/BigFurniturePack/Prefabs/Bathroom/");
-        //Debug.Log("asdflkjsdfkjljklfsdsdfsdfsdf"+furniture.Length);
-#if UNITY_ANDROID
+    StreamReader wr;
+
+    private void Awake()
+    {
         string path = "jar:file://" + Application.dataPath + "!/assets/Prefabs.txt";
         WWW wwwfile = new WWW(path);
         while (!wwwfile.isDone) { }
         var filepath = string.Format("{0}/{1}", Application.persistentDataPath, "Prefabs.t");
         File.WriteAllBytes(filepath, wwwfile.bytes);
 
-        StreamReader wr = new StreamReader(filepath);
+        wr = new StreamReader(filepath);
+
+    }
+    // Use this for initialization
+    void Start () {
+        //furniture = Resources.LoadAll("Assets/BigFurniturePack/Prefabs/Bathroom/");
+        //Debug.Log("asdflkjsdfkjljklfsdsdfsdfsdf"+furniture.Length);
+#if UNITY_ANDROID
         string t;
         while ((t = wr.ReadLine()) != null)
         {

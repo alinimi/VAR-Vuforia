@@ -1,0 +1,9 @@
+bed_1
+bed_2
+bed_3
+brush
+drying_with_towel
+flasket
+shower
+toilet
+washbasin

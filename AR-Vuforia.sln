@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR-Vuforia", "AR-Vuforia.csproj", "{A0642937-105D-934A-CBEA-00DD15A758ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR-Vuforia.Editor", "AR-Vuforia.Editor.csproj", "{1BB313D5-C451-D56F-A585-14EC4833ACF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0642937-105D-934A-CBEA-00DD15A758ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0642937-105D-934A-CBEA-00DD15A758ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0642937-105D-934A-CBEA-00DD15A758ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0642937-105D-934A-CBEA-00DD15A758ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB313D5-C451-D56F-A585-14EC4833ACF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB313D5-C451-D56F-A585-14EC4833ACF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB313D5-C451-D56F-A585-14EC4833ACF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB313D5-C451-D56F-A585-14EC4833ACF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

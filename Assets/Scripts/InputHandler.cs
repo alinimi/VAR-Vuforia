@@ -14,6 +14,7 @@ public class InputHandler : MonoBehaviour {
 		
         if (Input.touchCount == 1)
         {
+            Debug.Log("touch count");
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 Ray raycast = inputCamera.ScreenPointToRay(Input.GetTouch(0).position);
@@ -35,11 +36,11 @@ public class InputHandler : MonoBehaviour {
                 
                 //Rotate the object in accordance to the variance of the x component
                 if (moveDir.x > 0) {
-                    touchObject.transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+                    touchObject.transform.Rotate(Vector3.forward, -turnSpeed * Time.deltaTime);
                 }
                 if (moveDir.x < 0)
                 {
-                    touchObject.transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
+                    touchObject.transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime);
                 }
             }
 

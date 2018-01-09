@@ -44,7 +44,7 @@ public class ChangeColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isMenu && Input.touchCount == 1)
+        if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -63,9 +63,9 @@ public class ChangeColor : MonoBehaviour
 
                 //Whatever you want after a dubble tap    
                 print("Dubble tap");
-
-                menu.SetActive(true);
-                isMenu = true;
+                isMenu = !isMenu;
+                menu.SetActive(isMenu);
+                
 
                 TapCount = 0;
             }
@@ -73,7 +73,7 @@ public class ChangeColor : MonoBehaviour
         }
         if (Time.time > NewTime)
         {
-            if(TapCount == 1)
+            if(!isMenu && TapCount == 1)
             {
                 changeColor();
             }

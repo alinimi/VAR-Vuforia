@@ -26,8 +26,6 @@ public class GenerateButtons : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        //furniture = Resources.LoadAll("Assets/BigFurniturePack/Prefabs/Bathroom/");
-        //Debug.Log("asdflkjsdfkjljklfsdsdfsdfsdf"+furniture.Length);
 #if UNITY_ANDROID
         string t;
         while ((t = wr.ReadLine()) != null)

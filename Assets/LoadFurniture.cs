@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Vuforia;
 public class LoadFurniture : MonoBehaviour {
     public Transform target;
     public string filename;
@@ -29,6 +29,18 @@ public class LoadFurniture : MonoBehaviour {
         o.transform.SetParent(target);
         target.gameObject.GetComponent<ChangeColor>().InitColors();
         target.gameObject.GetComponent<ChangeColor>().EndMenu();
+        TrackableBehaviour.Status status = 
+            target.gameObject.GetComponent<ImageTargetBehaviour>().CurrentStatus;
+        if (!(status == TrackableBehaviour.Status.DETECTED||
+            status == TrackableBehaviour.Status.TRACKED ||
+            status == TrackableBehaviour.Status.EXTENDED_TRACKED))
+        {
+            foreach(MeshRenderer rend in o.GetComponentsInChildren<MeshRenderer>())
+            {
+                rend.enabled = false;
+            }
+        }
+
         iface.SetActive(false);
 
 

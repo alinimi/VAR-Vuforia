@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour {
 
-    public Camera camera;
+    public Camera inputCamera;
 
     private GameObject touchObject;
     private float turnSpeed = 10f;
@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour {
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                Ray raycast = camera.ScreenPointToRay(Input.GetTouch(0).position);
+                Ray raycast = inputCamera.ScreenPointToRay(Input.GetTouch(0).position);
                 RaycastHit raycastHit;
                 if (Physics.Raycast(raycast, out raycastHit))
                 {
@@ -57,7 +57,7 @@ public class InputHandler : MonoBehaviour {
 
             Vector2 rayPos = touchZero.position + (touchOne.position - touchZero.position) * 0.5f;
 
-            Ray raycast = camera.ScreenPointToRay(rayPos);
+            Ray raycast = inputCamera.ScreenPointToRay(rayPos);
             RaycastHit raycastHit;
 
             if (Physics.Raycast(raycast, out raycastHit))

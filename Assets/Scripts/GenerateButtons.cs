@@ -9,9 +9,11 @@ public class GenerateButtons : MonoBehaviour {
     Object[] furniture;
     public Transform target;
     public GameObject iface;
+    public ChangeColor changeColor;
     
     public GameObject buttonPrefab;
     StreamReader wr;
+    List<GameObject> buttons = new List<GameObject>();
 
     private void Awake()
     {
@@ -26,37 +28,48 @@ public class GenerateButtons : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-#if UNITY_ANDROID
         string t;
         while ((t = wr.ReadLine()) != null)
         {
             GameObject button = Instantiate(buttonPrefab);
+            buttons.Add(button);
             button.transform.SetParent(transform);
             button.GetComponentInChildren<Text>().text = t;//Path.GetFileNameWithoutExtension(t);
             LoadFurniture loader = button.GetComponent<LoadFurniture>();
             loader.target = target;
             loader.iface = iface;
+            loader.changeColor = changeColor;
             loader.filename = Path.GetFileNameWithoutExtension(t);
 
         }
-#else
 
-
-        foreach (string t in Directory.GetFiles("Assets/Resources","*.bytes"))
+        
+        foreach (string s in Directory.GetFiles("Assets/Resources","*.prefab"))
         {
             GameObject button = Instantiate(buttonPrefab);
+            buttons.Add(button);
             button.transform.SetParent(transform);
-            button.GetComponentInChildren<Text>().text = Path.GetFileNameWithoutExtension(t) ;
+            button.GetComponentInChildren<Text>().text = Path.GetFileNameWithoutExtension(s) ;
             LoadFurniture loader = button.GetComponent<LoadFurniture>();
             loader.target = target;
             loader.iface = iface;
-            loader.filename = Path.GetFileNameWithoutExtension(t);
+            loader.changeColor = changeColor;
+            loader.filename = Path.GetFileNameWithoutExtension(s);
 
         }
 
-#endif
     }
 	
+    public void ChangeTarget(Transform t)
+    {
+        target = t;
+        foreach(var b in buttons)
+        {
+            b.GetComponent<LoadFurniture>().target = t;
+        }
+    }
+
+
 	// Update is called once per frame
 	void Update () {
 		

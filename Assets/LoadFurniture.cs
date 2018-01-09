@@ -4,8 +4,10 @@ using UnityEngine;
 using Vuforia;
 public class LoadFurniture : MonoBehaviour {
     public Transform target;
+    
     public string filename;
     public GameObject iface;
+    public ChangeColor changeColor;
     Object f;
     // Use this for initialization
     void Start () {
@@ -27,8 +29,9 @@ public class LoadFurniture : MonoBehaviour {
         GameObject o = Instantiate(f,oldChild.position,oldChild.rotation,target) as GameObject;
         Destroy(oldChild.gameObject);
         o.transform.SetParent(target);
-        target.gameObject.GetComponent<ChangeColor>().InitColors();
-        target.gameObject.GetComponent<ChangeColor>().EndMenu();
+        o.transform.SetAsFirstSibling();
+        changeColor.InitColors();
+        changeColor.EndMenu();
         TrackableBehaviour.Status status = 
             target.gameObject.GetComponent<ImageTargetBehaviour>().CurrentStatus;
         if (!(status == TrackableBehaviour.Status.DETECTED||

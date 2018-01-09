@@ -13,18 +13,32 @@ public class ChangeColor : MonoBehaviour
     Color[] Colors = { Color.cyan, Color.green, Color.grey };
     int colorIndex = 0;
     public bool isMenu = false;
+
+    GameObject selectedObject;
+    ViewTrigger currentButton;
     // Use this for initialization
     void Start()
     {
         InitColors();
     }
 
+    public void ChangeSelectedObject(ViewTrigger button, GameObject select)
+    {
+        selectedObject = select;
+        if(currentButton != null) currentButton.ResetButton();
+        currentButton = button;
+    }
+
+
     public void InitColors()
     {
         Debug.Log("start color");
+        if(selectedObject != null)
+        {
+            foreach (var child in selectedObject.transform.GetComponentsInChildren<Renderer>())
+                child.material.color = Colors[colorIndex];
 
-        foreach (var child in transform.GetComponentsInChildren<Renderer>())
-            child.material.color = Colors[colorIndex];
+        }
 
     }
 
@@ -44,6 +58,12 @@ public class ChangeColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isMenu = !isMenu;
+            menu.SetActive(isMenu);
+
+        }
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
@@ -83,9 +103,13 @@ public class ChangeColor : MonoBehaviour
 
     public void changeColor()
     {
-        Debug.Log("change color");
-        colorIndex = (colorIndex + 1) % Colors.Length;
-        foreach(var child in transform.GetComponentsInChildren<Renderer>())
-            child.material.color = Colors[colorIndex];
+        if(selectedObject!= null)
+        {
+            Debug.Log("change color");
+            colorIndex = (colorIndex + 1) % Colors.Length;
+            foreach (var child in selectedObject.transform.GetComponentsInChildren<Renderer>())
+                child.material.color = Colors[colorIndex];
+
+        }
     }
 }

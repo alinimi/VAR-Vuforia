@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Main.unity
+- path: C:/Users/Alicia/Documents/VAR-ARProject/Assets/Scenes/3-AR-VR.unity
   isLoaded: 1
   isActive: 1

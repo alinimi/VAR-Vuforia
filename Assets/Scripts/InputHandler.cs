@@ -56,7 +56,7 @@ public class InputHandler : MonoBehaviour {
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
 
-            Vector2 rayPos = touchZero.position + (touchOne.position - touchZero.position) * 0.5f;
+            //Vector2 rayPos = touchZero.position + (touchOne.position - touchZero.position) * 0.5f;
 
             //Ray raycast = inputCamera.ScreenPointToRay(rayPos);
             //RaycastHit raycastHit;
@@ -78,8 +78,8 @@ public class InputHandler : MonoBehaviour {
                     // Find the difference in the distances between each frame.
                     float deltaMagDiff = touchDeltaMag - prevTouchDeltaMag;
 
-                    touchObject.transform.localScale += new Vector3(deltaMagDiff*0.5f, deltaMagDiff*0.5f, deltaMagDiff*0.5f);
-                }
+                    touchObject.transform.localScale += new Vector3(deltaMagDiff*0.01f, deltaMagDiff*0.01f, deltaMagDiff*0.01f);
+        }
 
                 //touchObject = null;
             }

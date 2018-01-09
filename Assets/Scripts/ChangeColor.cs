@@ -8,6 +8,7 @@ public class ChangeColor : MonoBehaviour
     int TapCount;
     public float MaxDubbleTapTime;
     float NewTime;
+    float tapTime;
     public GameObject menu;
 
     Color[] Colors = { Color.cyan, Color.green, Color.grey };
@@ -25,8 +26,12 @@ public class ChangeColor : MonoBehaviour
     public void ChangeSelectedObject(ViewTrigger button, GameObject select)
     {
         selectedObject = select;
-        if(currentButton != null) currentButton.ResetButton();
-        currentButton = button;
+        if(button != null)
+        {
+            if (currentButton != null) currentButton.ResetButton();
+            currentButton = button;
+
+        }
     }
 
 
@@ -67,11 +72,15 @@ public class ChangeColor : MonoBehaviour
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Began)
+            {
+                tapTime = Time.time + 0.3f;
+            }
+            else if (touch.phase == TouchPhase.Ended && Time.time <= tapTime)
             {
                 TapCount += 1;
             }
+
 
             if (TapCount == 1)
             {

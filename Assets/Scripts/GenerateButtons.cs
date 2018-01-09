@@ -10,6 +10,7 @@ public class GenerateButtons : MonoBehaviour {
     public Transform target;
     public GameObject iface;
     public ChangeColor changeColor;
+    public InputHandler inputHandler;
     
     public GameObject buttonPrefab;
     StreamReader wr;
@@ -39,6 +40,7 @@ public class GenerateButtons : MonoBehaviour {
             loader.target = target;
             loader.iface = iface;
             loader.changeColor = changeColor;
+            loader.inputHandler = inputHandler;
             loader.filename = Path.GetFileNameWithoutExtension(t);
 
         }
@@ -54,6 +56,7 @@ public class GenerateButtons : MonoBehaviour {
             loader.target = target;
             loader.iface = iface;
             loader.changeColor = changeColor;
+            loader.inputHandler = inputHandler;
             loader.filename = Path.GetFileNameWithoutExtension(s);
 
         }

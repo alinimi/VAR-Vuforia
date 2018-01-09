@@ -8,6 +8,7 @@ public class LoadFurniture : MonoBehaviour {
     public string filename;
     public GameObject iface;
     public ChangeColor changeColor;
+    public InputHandler inputHandler;
     Object f;
     // Use this for initialization
     void Start () {
@@ -32,6 +33,9 @@ public class LoadFurniture : MonoBehaviour {
         o.transform.SetAsFirstSibling();
         changeColor.InitColors();
         changeColor.EndMenu();
+        changeColor.ChangeSelectedObject(null, o);
+        inputHandler.touchObject = o;
+
         TrackableBehaviour.Status status = 
             target.gameObject.GetComponent<ImageTargetBehaviour>().CurrentStatus;
         if (!(status == TrackableBehaviour.Status.DETECTED||

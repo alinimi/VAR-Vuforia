@@ -526,6 +526,7 @@ MonoBehaviour:
   target: {fileID: 1200545779}
   iface: {fileID: 846552759}
   changeColor: {fileID: 1200545780}
+  inputHandler: {fileID: 813304086}
   buttonPrefab: {fileID: 1525776346640696, guid: 6183a82f93bf67043a4e3665bd9f9e0b,
     type: 2}
 --- !u!114 &754500850

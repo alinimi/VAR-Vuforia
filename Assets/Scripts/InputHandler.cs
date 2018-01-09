@@ -6,7 +6,7 @@ public class InputHandler : MonoBehaviour {
 
     public Camera inputCamera;
 
-    private GameObject touchObject;
+    public GameObject touchObject;
     private float turnSpeed = 10f;
 	
 	// Update is called once per frame
@@ -15,7 +15,7 @@ public class InputHandler : MonoBehaviour {
         if (Input.touchCount == 1)
         {
             Debug.Log("touch count");
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            /*if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 Ray raycast = inputCamera.ScreenPointToRay(Input.GetTouch(0).position);
                 RaycastHit raycastHit;
@@ -26,7 +26,7 @@ public class InputHandler : MonoBehaviour {
                         touchObject = raycastHit.transform.gameObject;
                     }
                 }
-            }
+            }*/
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved && touchObject != null)
             {
@@ -44,10 +44,10 @@ public class InputHandler : MonoBehaviour {
                 }
             }
 
-            if (Input.GetTouch(0).phase == TouchPhase.Ended && touchObject != null)
+            /*if (Input.GetTouch(0).phase == TouchPhase.Ended && touchObject != null)
             {
                 touchObject = null;
-            }
+            }*/
         }
 
         if (Input.touchCount == 2)
@@ -58,14 +58,14 @@ public class InputHandler : MonoBehaviour {
 
             Vector2 rayPos = touchZero.position + (touchOne.position - touchZero.position) * 0.5f;
 
-            Ray raycast = inputCamera.ScreenPointToRay(rayPos);
-            RaycastHit raycastHit;
+            //Ray raycast = inputCamera.ScreenPointToRay(rayPos);
+            //RaycastHit raycastHit;
 
-            if (Physics.Raycast(raycast, out raycastHit))
+            /*if (Physics.Raycast(raycast, out raycastHit))
             {
                 if (raycastHit.collider != null)
                 {
-                    touchObject = raycastHit.transform.gameObject;
+                    touchObject = raycastHit.transform.gameObject;*/
 
                     // Find the position in the previous frame of each touch.
                     Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
@@ -81,8 +81,8 @@ public class InputHandler : MonoBehaviour {
                     touchObject.transform.localScale += new Vector3(deltaMagDiff*0.5f, deltaMagDiff*0.5f, deltaMagDiff*0.5f);
                 }
 
-                touchObject = null;
+                //touchObject = null;
             }
         }
-    }
-}
+    /*}
+}*/

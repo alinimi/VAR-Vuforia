@@ -25,6 +25,7 @@ public class ViewTrigger : MonoBehaviour
     public bool Focused { get; set; }
     public ChangeColor changeColor;
     public GenerateButtons genButtons;
+    public InputHandler inputHandler;
     #endregion // PUBLIC_MEMBER_VARIABLES
 
 
@@ -85,6 +86,7 @@ public class ViewTrigger : MonoBehaviour
                 Debug.Log("SIBLING"+transform.parent.GetChild(0));
                 changeColor.ChangeSelectedObject(this,transform.parent.GetChild(0).gameObject);
                 genButtons.ChangeTarget(transform.parent);
+                inputHandler.touchObject = transform.parent.GetChild(0).gameObject;
 
 
 

@@ -288,16 +288,11 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Reticle
-259cef49f3613333de3a1b08c863b281 Assembly-CSharp.dll:.FadeObject
-af81a921b7f8543a1aaa2a5cb365859a Assembly-CSharp.dll:.DrillController
 2e5371c009029635bcd5400d29d1852b Assembly-CSharp.dll:.ViewTrigger
 caf2ad5f4154bf8f2def6d38fd9f54c8 Assembly-CSharp.dll:.Button3D
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BlackMaskBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BackToAbout
-97a9585a3eff3c0167efa9a5b17a3020 Assembly-CSharp.dll:.RockPileController
-e1d5d7f4d402f4c9715ec559a2ff02e2 Assembly-CSharp.dll:.Astronaut
 d7fd6229cd3b4a410a9ead7831927dff Assembly-CSharp.dll:.TransitionManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Drone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TapHandler
 fb41f632b9f295d4ccdc90f7faffc953 Assembly-CSharp.dll:.AboutManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FrameRateSettings
@@ -310,4 +305,3 @@ c87bf2ff4dfffba04379abbbfd243202 Assembly-CSharp.dll:.AsyncSceneLoader
 3934ca8022d4c1e2d3df62eb846732fb Assembly-CSharp.dll:.MenuAnimator
 22b1c9e3760ce0520da21ce2ca684142 Assembly-CSharp.dll:.InitErrorHandler
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Autofocus
-e3c25c60c699f3cd475252c49e18d292 Assembly-CSharp.dll:.AstronautStateMachineBehaviour

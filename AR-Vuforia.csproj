@@ -302,14 +302,6 @@
     <Compile Include="Assets\Common\TapHandler.cs" />
     <Compile Include="Assets\Common\TrackableSettings.cs" />
     <Compile Include="Assets\LoadFurniture.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Astronaut.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Augmentation.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\RockPileController.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\DrillController.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\InteractionHelpers\FadeObject.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\StateMachineBehaviours\AstronautStateMachineBehaviour.cs" />
-    <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\StateMachineBehaviours\AugmentationStateMachineBehaviour.cs" />
     <Compile Include="Assets\SamplesResources\Scripts\AboutManager.cs" />
     <Compile Include="Assets\SamplesResources\Scripts\Autofocus.cs" />
     <Compile Include="Assets\SamplesResources\Scripts\BackToAbout.cs" />
